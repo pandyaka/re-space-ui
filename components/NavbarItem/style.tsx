@@ -10,7 +10,7 @@ const NavabarItemStyle = styled.a<NavabarItemStyleProps>`
     padding: 7px 4px;
     margin: 0 0.5vw;
     color: ${(props) => (props.distinct ? props.theme.colors.blue : props.theme.colors.gray)};
-    font-style: ${(props) => props.theme.font.caption};
+    font-family: ${(props) => props.theme.font.regular};
     border-style: ${(props) => (props.distinct ? 'solid' : 'unset')};
 `;
 

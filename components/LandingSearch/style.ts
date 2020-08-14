@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 export const LandingSearchStyle = styled.div`
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
 `;
 
 export const WelcomeCaption = styled.div`

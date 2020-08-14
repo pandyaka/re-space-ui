@@ -7,7 +7,7 @@ const mainTheme: DefaultTheme = {
     colors: {
         pink: '#FF427F',
         blue: '#0779E4',
-        gray: '#494949'
+        gray: '#383838'
     },
 
     font: {
