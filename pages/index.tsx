@@ -1,7 +1,12 @@
 import React, { SFC } from 'react';
-import Navbar from '@components/Navbar';
+import PageLayout from '@components/PageLayout';
+import { LandingLayout } from '@components/Layout';
 
 const Index: SFC = () => {
-    return <Navbar>heyy hello</Navbar>;
+    return (
+        <PageLayout>
+            <LandingLayout>heyy hello</LandingLayout>
+        </PageLayout>
+    );
 };
 export default Index;
