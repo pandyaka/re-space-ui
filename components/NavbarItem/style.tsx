@@ -6,7 +6,7 @@ interface NavabarItemStyleProps {
 
 const NavabarItemStyle = styled.a<NavabarItemStyleProps>`
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
     padding: 7px 4px;
     margin: 0 0.5vw;
     color: ${(props) => (props.distinct ? props.theme.colors.blue : props.theme.colors.gray)};
