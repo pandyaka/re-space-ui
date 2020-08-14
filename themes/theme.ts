@@ -5,20 +5,14 @@ const mainTheme: DefaultTheme = {
     borderRadius: '4px',
 
     colors: {
-        primary: '#2B2B2B',
-        secondary: '#ffd200'
-    },
-
-    fontColors: {
-        primary: '#4E4E4E',
-        secondary: '#FFFFFF',
-        dark: '#000'
+        pink: '#FF427F',
+        blue: '#0779E4',
+        gray: '#494949'
     },
 
     font: {
-        caption: 'PT Serif Caption',
-        subCaption: 'Source Serif Pro',
-        regular: 'Lato'
+        caption: 'Josefin Sans',
+        regular: 'Open Sans'
     },
 
     breakpoints: {

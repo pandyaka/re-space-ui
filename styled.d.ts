@@ -7,19 +7,13 @@ declare module 'styled-components' {
         borderRadius: string;
 
         colors: {
-            primary: string;
-            secondary: string;
-        };
-
-        fontColors: {
-            primary: string;
-            secondary: string;
-            dark: string;
+            pink: string;
+            blue: string;
+            gray: string;
         };
 
         font: {
             caption: string;
-            subCaption: string;
             regular: string;
         };
 

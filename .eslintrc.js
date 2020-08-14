@@ -25,8 +25,5 @@ module.exports = {
         '@typescript-eslint/interface-name-prefix': 'off',
         'class-methods-use-this': 'off',
         '@typescript-eslint/camelcase': 'off'
-    },
-    env: {
-        'jest/globals': true
     }
 };

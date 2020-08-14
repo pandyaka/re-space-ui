@@ -45,7 +45,7 @@ export default class MyDocument extends Document {
                         crossOrigin="anonymous"
                     />
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=PT+Serif+Caption&family=Source+Serif+Pro:wght@400;600;700&display=swap"
+                        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;600;700&family=Open+Sans:wght@300;400;600&display=swap"
                         rel="stylesheet"
                     />
                     <link href="/css/app.css" rel="stylesheet" />
