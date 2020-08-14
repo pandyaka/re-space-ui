@@ -6,7 +6,10 @@
         {
           "root": ["./"],
           "alias": {
-            "@components": "./components"
+            "@components": "./components",
+            "@themes": "./themes",
+            "@factory": "./factory",
+            "@interfaces": "./interfaces"
           }
         }
       ]
