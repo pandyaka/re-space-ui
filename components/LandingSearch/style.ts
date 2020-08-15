@@ -14,3 +14,10 @@ export const WelcomeCaption = styled.div`
     font-size: 48px;
     width: 720px;
 `;
+
+export const SearchBottom = styled.div`
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;

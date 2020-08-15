@@ -14,7 +14,6 @@ export const SearchIcon = styled.div`
 `;
 
 export const SearchField = styled.input`
-    border: 1px solid grey;
     height: 50px;
     width: 100%;
     outline: 0;
@@ -26,4 +25,8 @@ export const SearchField = styled.input`
     border-bottom-style: solid;
     border-width: 2px;
     border-color: #000;
+    ::placeholder {
+        color: #000;
+    }
+    margin: 4px;
 `;
