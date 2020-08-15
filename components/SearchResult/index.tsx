@@ -26,29 +26,4 @@ const SearchResult: FunctionComponent<MallsProps> = (props: MallsProps) => {
     );
 };
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-    const { res } = ctx;
-    const { location } = ctx.query;
-    const url = `${process.env.API_URL}/malls`;
-
-    try {
-        const res = await fetch(url, {
-            method: 'GET',
-            body: JSON.stringify({ location: location })
-        });
-        const data = (await res.json()) as Mall[];
-
-        return {
-            props: {
-                malls: data
-            }
-        };
-    } catch (e) {
-        res.setHeader('location', '/');
-        res.statusCode = 302;
-        res.end();
-        return { props: {} };
-    }
-};
-
 export default SearchResult;
