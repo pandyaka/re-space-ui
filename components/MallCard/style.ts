@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const MallCardStyle = styled.div`
+    cursor: pointer;
     font-family: ${(props) => props.theme.font.regular};
     color: ${(props) => props.theme.colors.gray};
     width: 500px;
