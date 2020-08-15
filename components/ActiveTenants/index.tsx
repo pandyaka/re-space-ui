@@ -33,7 +33,7 @@ const ActiveTenants: FunctionComponent = () => {
                     </ActiveTenantsOption>
                 ))}
             </ActiveTenantsHeader>
-            <VerticalScrollContainer height="170px">
+            <VerticalScrollContainer height="160px">
                 {[...Array(10).keys()].map((el, idx) => (
                     <ActiveTenantCard key={idx} />
                 ))}
