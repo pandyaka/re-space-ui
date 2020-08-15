@@ -3,18 +3,26 @@ import { MallCardStyle, Top, Bottom, Bold, Subscript } from './style';
 import { Image } from '@components/Image';
 import LinkWrapper from '@components/LinkWrapper';
 
-const MallCard: FunctionComponent = () => {
+interface MallCardProps {
+    id: string;
+    name: string;
+    location: string;
+}
+
+const MallCard: FunctionComponent<MallCardProps> = (props: MallCardProps) => {
+    const { id, name, location } = props;
+    const link = `/mall/${id}`;
     return (
-        <LinkWrapper link="/mall/1" as="mall/1">
+        <LinkWrapper link="/mall/[id]" as={link}>
             <MallCardStyle>
                 <Image img="/images/mall-placeholder.jpg" w="100%" h="280px" />
                 <Top>
-                    <div>Kota Kasablanka</div>
+                    <div>{name}</div>
                     <div>
                         <Subscript>from</Subscript>Rp45jt/Month
                     </div>
                 </Top>
-                <Bottom>Jl. Casablanca Raya Kav. 88, Menteng Dalam, Jakarta Selatan</Bottom>
+                <Bottom>{location}</Bottom>
                 <Bottom>
                     <Bold>Available Spaces:</Bold> Food & Beverages, Fashion, Retail
                 </Bottom>
