@@ -13,10 +13,20 @@ export const SearchBarWithIcon: FunctionComponent = () => {
     );
 };
 
-export const SearchBar: FunctionComponent = () => {
+interface InputProps {
+    formKey: string;
+    textHandler;
+}
+
+export const SearchBar: FunctionComponent<InputProps> = ({ formKey, textHandler }: InputProps) => {
     return (
         <SearchBarWrapper>
-            <SearchField placeholder="Find Space" />
+            <SearchField
+                onChange={(event) => {
+                    textHandler(formKey, event.target.value);
+                }}
+                placeholder="Find Space"
+            />
         </SearchBarWrapper>
     );
 };
