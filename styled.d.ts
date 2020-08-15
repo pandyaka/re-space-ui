@@ -10,6 +10,7 @@ declare module 'styled-components' {
             pink: string;
             blue: string;
             gray: string;
+            softPink: string;
         };
 
         font: {
@@ -22,6 +23,19 @@ declare module 'styled-components' {
             md: string;
             lg: string;
             xl: string;
+        };
+
+        map: {
+            colors: {
+                bg: string;
+                stroke: string;
+                available: string;
+                occupied: string;
+            };
+
+            sizes: {
+                stroke: string;
+            };
         };
     }
 }
