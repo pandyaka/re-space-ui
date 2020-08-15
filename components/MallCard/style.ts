@@ -5,7 +5,7 @@ export const MallCardStyle = styled.div`
     font-family: ${(props) => props.theme.font.regular};
     color: ${(props) => props.theme.colors.gray};
     width: 500px;
-    height: 400px;
+    min-height: 400px;
     border-bottom-style: solid;
     border-width: 4px;
     border-color: ${(props) => props.theme.colors.blue};

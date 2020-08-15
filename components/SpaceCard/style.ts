@@ -31,7 +31,14 @@ export const Top = styled.div`
 `;
 
 export const Bottom = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     font-size: 16px;
     padding: 0 0 8px;
+    margin: 4px;
     width: 90%;
+    border-bottom: 1px solid;
+    &:last-child {
+        border-bottom: none;
+    }
 `;

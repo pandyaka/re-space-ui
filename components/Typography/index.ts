@@ -34,3 +34,11 @@ export const H3Style = styled.h3<TypographyProps>`
     font-size: 18px;
     margin: 0;
 `;
+
+export const Small = styled.div<TypographyProps>`
+    font-family: ${(props) => props.theme.font.regular};
+    color: ${(props) => (props.color ? props.theme.colors[props.color] : props.theme.colors.gray)};
+    font-weight: 600;
+    font-size: 16px;
+    margin: 24px 0;
+`;

@@ -10,9 +10,15 @@ const SpaceCard: FunctionComponent = () => {
                 <div>Retail</div>
                 <div>Rp45jt/Month</div>
             </Top>
-            <Bottom>Floor LG</Bottom>
-            <Bottom>Size 15 m2</Bottom>
-            <Bottom>Space No. 244A</Bottom>
+            <Bottom>
+                <div>Floor</div> <div>LG</div>
+            </Bottom>
+            <Bottom>
+                <div>Size</div> <div>24Msq</div>
+            </Bottom>
+            <Bottom>
+                <div>Space No.</div> <div>69A</div>
+            </Bottom>
         </SpaceCardStyle>
     );
 };

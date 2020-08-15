@@ -1,5 +1,5 @@
 import React, { useState, FunctionComponent } from 'react';
-
+import { useRouter } from 'next/router';
 import { TopSearchStyle } from './style';
 import { SearchBarWithIcon } from '@components/SearchBar';
 import Container from '@components/Container';
@@ -21,6 +21,8 @@ const TopSearch: FunctionComponent = () => {
     };
     const mockContractList = ['lease', 'rent'];
     const mockTypeList = ['fnb', 'fashion'];
+    const router = useRouter();
+    const { location, contractType, spaceType } = router.query;
     const [searchQuery, setSearchQuery] = useState(defaultSearchQuery);
     const inputHandler = (key, value) => {
         const newQuery = { ...searchQuery };
@@ -32,8 +34,18 @@ const TopSearch: FunctionComponent = () => {
         <TopSearchStyle noPadding lined>
             <Container flex>
                 <SearchBarWithIcon formKey="location" textHandler={inputHandler} href={searchQuery.query} />
-                <Dropdown formKey="contractType" list={mockContractList} handleChange={inputHandler} />
-                <Dropdown formKey="spaceType" list={mockTypeList} handleChange={inputHandler} />
+                <Dropdown
+                    defaultValue={contractType}
+                    formKey="contractType"
+                    list={mockContractList}
+                    handleChange={inputHandler}
+                />
+                <Dropdown
+                    defaultValue={spaceType}
+                    formKey="spaceType"
+                    list={mockTypeList}
+                    handleChange={inputHandler}
+                />
             </Container>
         </TopSearchStyle>
     );
