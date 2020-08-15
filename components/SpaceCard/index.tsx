@@ -1,10 +1,16 @@
-import React, { FunctionComponent } from 'react';
+import React, { SFC } from 'react';
 import { SpaceCardStyle, Top, Bottom } from './style';
 import { Image } from '@components/Image';
 
-const SpaceCard: FunctionComponent = () => {
+interface SpaceCardInterface {
+    onClick: () => void;
+}
+
+const SpaceCard: SFC<SpaceCardInterface> = (props: SpaceCardInterface) => {
+    const { onClick } = props;
+
     return (
-        <SpaceCardStyle>
+        <SpaceCardStyle onClick={onClick}>
             <Image img="/images/space-placeholder.jpg" w="100%" h="220px" />
             <Top>
                 <div>Retail</div>

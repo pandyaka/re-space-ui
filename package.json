@@ -22,13 +22,15 @@
   },
   "homepage": "https://github.com/pandyaka/re-space-ui#readme",
   "dependencies": {
+    "@styled-icons/ionicons-outline": "^10.15.1",
     "lodash": "^4.17.19",
     "next": "^9.5.2",
     "nprogress": "^0.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-reveal": "^1.2.2",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "styled-react-modal": "^2.0.1"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.157",
