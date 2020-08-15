@@ -8,7 +8,7 @@ import Dropdown from '@components/Dropdown';
 const TopSearch: SFC = () => {
     return (
         <TopSearchStyle noPadding lined>
-            <Container>
+            <Container flex>
                 <SearchBarWithIcon />
                 <Dropdown />
                 <Dropdown />

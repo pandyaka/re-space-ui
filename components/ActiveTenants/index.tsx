@@ -1,6 +1,8 @@
 import React, { FunctionComponent, useState } from 'react';
 
-import { ActiveTenantsStyle, ActiveTenantsHeader } from './style';
+import { ActiveTenantsStyle, ActiveTenantsHeader, ActiveTenantsTitle, ActiveTenantsOption } from './style';
+import ActiveTenantCard from '@components/ActiveTenantCard';
+import VerticalScrollContainer from '@components/VerticalScrollContainer';
 
 const CATEGORIES = [
     'food & beverage',
@@ -24,14 +26,18 @@ const ActiveTenants: FunctionComponent = () => {
     return (
         <ActiveTenantsStyle>
             <ActiveTenantsHeader>
-                <h2>Active Tenants</h2>
+                <ActiveTenantsTitle>Active Tenants</ActiveTenantsTitle>
                 {CATEGORIES.map((el, idx) => (
-                    <span key={idx} onClick={() => handleCategoryClick(el)}>
+                    <ActiveTenantsOption key={idx} selected={el === category} onClick={() => handleCategoryClick(el)}>
                         {el}
-                    </span>
+                    </ActiveTenantsOption>
                 ))}
             </ActiveTenantsHeader>
-            <span>{category}</span>
+            <VerticalScrollContainer height="170px">
+                {[...Array(10).keys()].map((el, idx) => (
+                    <ActiveTenantCard key={idx} />
+                ))}
+            </VerticalScrollContainer>
         </ActiveTenantsStyle>
     );
 };
