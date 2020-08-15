@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Title, Subtitle } from '@components/Typography';
 
 export const LandingSearchStyle = styled.div`
     display: flex;
@@ -7,19 +8,14 @@ export const LandingSearchStyle = styled.div`
     justify-content: center;
 `;
 
-export const WelcomeCaption = styled.div`
-    font-family: ${(props) => props.theme.font.caption};
-    color: ${(props) => props.theme.colors.pink};
-    font-weight: 700;
-    font-size: 48px;
+export const WelcomeCaption = styled(Title)`
+    display: block;
+    margin: 0;
     width: 720px;
 `;
 
-export const WelcomeSubCaption = styled.div`
-    font-family: ${(props) => props.theme.font.caption};
-    color: ${(props) => props.theme.colors.blue};
-    font-weight: 400;
-    font-size: 24px;
+export const WelcomeSubCaption = styled(Subtitle)`
+    display: block;
     width: 720px;
     margin-bottom: 32px;
 `;

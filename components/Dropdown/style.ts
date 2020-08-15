@@ -6,6 +6,7 @@ export const DropdownStyle = styled.select`
     width: 200px;
     height: 50px;
     font-family: ${(props) => props.theme.font.caption};
+    box-sizing: content-box;
     background-image: url('/icons/down-arrow.svg');
     background-repeat: no-repeat;
     background-position: right 0.7em top 50%;
