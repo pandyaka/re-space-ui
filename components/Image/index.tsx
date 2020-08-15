@@ -16,6 +16,6 @@ export const Image = styled.div<ImageProps>`
     background-size: cover;
     background-position: center;
     @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
-        display: ${(props) => (props.largeOnly ? 'none' : 'unset')};
+        display: ${(props) => (props.largeOnly ? 'none' : 'block')};
     }
 `;
