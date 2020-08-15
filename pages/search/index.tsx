@@ -25,13 +25,10 @@ const Index: SFC<MallsProps> = (props: MallsProps) => {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
     const { res } = ctx;
     const { location } = ctx.query;
-    const url = `${process.env.API_URL}/malls`;
+    const url = `${process.env.API_URL}/malls?location=${location}`;
 
     try {
-        const res = await fetch(url, {
-            method: 'GET',
-            body: JSON.stringify({ location: location })
-        });
+        const res = await fetch(url);
         const data = (await res.json()) as Mall[];
 
         return {
@@ -40,6 +37,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
             }
         };
     } catch (e) {
+        console.log(e);
         res.setHeader('location', '/');
         res.statusCode = 302;
         res.end();

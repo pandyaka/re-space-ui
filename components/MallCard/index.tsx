@@ -7,15 +7,16 @@ interface MallCardProps {
     id: string;
     name: string;
     location: string;
+    image_url: string[];
 }
 
 const MallCard: FunctionComponent<MallCardProps> = (props: MallCardProps) => {
-    const { id, name, location } = props;
+    const { id, name, location, image_url } = props;
     const link = `/mall/${id}`;
     return (
         <LinkWrapper link="/mall/[id]" as={link}>
             <MallCardStyle>
-                <Image img="/images/mall-placeholder.jpg" w="100%" h="280px" />
+                <Image img={image_url[0]} w="100%" h="280px" />
                 <Top>
                     <div>{name}</div>
                     <div>

@@ -19,7 +19,13 @@ const SearchResult: FunctionComponent<MallsProps> = (props: MallsProps) => {
             <SectionCaption>Search results for {`"${location}"`}</SectionCaption>
             <CardGallery>
                 {malls.map((mall, idx) => (
-                    <MallCard key={idx} id={mall.id} name={mall.name} location={mall.location} />
+                    <MallCard
+                        key={idx}
+                        id={mall.id}
+                        name={mall.name}
+                        location={mall.location}
+                        image_url={mall.image_url}
+                    />
                 ))}
             </CardGallery>
         </SearchSectionStyle>

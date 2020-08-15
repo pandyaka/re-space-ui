@@ -16,7 +16,13 @@ const ExploreSection: FunctionComponent<MallsMapProps> = (props: MallsMapProps) 
             <SectionCaption>Explore Spaces in Tebet</SectionCaption>
             <CardGallery>
                 {malls.map((mall, idx) => (
-                    <MallCard key={idx} id={mall.id} name={mall.name} location={mall.location} />
+                    <MallCard
+                        key={idx}
+                        id={mall.id}
+                        name={mall.name}
+                        location={mall.location}
+                        image_url={mall.image_url}
+                    />
                 ))}
             </CardGallery>
             <CenterButton ph="see more" href="/malls" w="144px" h="40px" bc="#FF427F" c="white" />
