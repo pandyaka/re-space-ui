@@ -1,14 +1,15 @@
 import React, { SFC } from 'react';
-import Section from '@components/Section';
+
+import { AllSpaceLayoutStyle, AllSpaceTitle } from './style';
 import Container from '@components/Container';
 
 const AllSpaceLayout: SFC = () => {
     return (
-        <Section>
+        <AllSpaceLayoutStyle>
             <Container>
-                <h2>Available Spaces</h2>
+                <AllSpaceTitle>Available Spaces</AllSpaceTitle>
             </Container>
-        </Section>
+        </AllSpaceLayoutStyle>
     );
 };
 

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Section from '@components/Section';
-import { Image } from '@components/Image';
 
 export const MallMapLayoutStyle = styled(Section)``;
 
@@ -10,15 +9,6 @@ export const MallMapGrid = styled.div`
     grid-template-rows: 3fr 2fr;
     gap: 16px;
     height: 600px;
-`;
-
-export const MallCell = styled.div`
-    display: flex;
-    flex-direction: column;
-
-    ${Image} {
-        flex-grow: 1;
-    }
 `;
 
 export const MapCell = styled.div`

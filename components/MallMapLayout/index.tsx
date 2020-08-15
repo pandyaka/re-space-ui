@@ -1,10 +1,10 @@
 import React, { SFC } from 'react';
 
-import { MallMapLayoutStyle, MallMapGrid, MapCell, MallCell } from './style';
+import { MallMapLayoutStyle, MallMapGrid, MapCell } from './style';
 import Container from '@components/Container';
-import { Image } from '@components/Image';
 import ActiveTenants from '@components/ActiveTenants';
 import InteractiveMap from '@components/InteractiveMap';
+import MallHeadline from '@components/MallHeadline';
 
 const MallMapLayout: SFC = () => {
     return (
@@ -17,11 +17,7 @@ const MallMapLayout: SFC = () => {
                             onLocationClick={console.log}
                         />
                     </MapCell>
-                    <MallCell>
-                        <Image w="100%" h="auto" img="/images/mall-placeholder.jpg" />
-                        <h1>Kota Kasablanka</h1>
-                        <span>Jl. Casablanca Raya Kav. 88, Menteng Dalam, Jakarta Selatan</span>
-                    </MallCell>
+                    <MallHeadline />
                     <ActiveTenants />
                 </MallMapGrid>
             </Container>
