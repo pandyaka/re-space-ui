@@ -26,3 +26,11 @@ export const H2Style = styled.h2<TypographyProps>`
     font-weight: 700;
     font-size: 24px;
 `;
+
+export const H3Style = styled.h3<TypographyProps>`
+    font-family: ${(props) => props.theme.font.caption};
+    color: ${(props) => (props.color ? props.theme.colors[props.color] : props.theme.colors.pink)};
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+`;
