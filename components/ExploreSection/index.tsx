@@ -11,7 +11,6 @@ const ExploreSection: FunctionComponent = () => {
                 <MallCard />
                 <MallCard />
             </CardGallery>
-            <SectionCaption></SectionCaption>
             <CenterButton ph="see more" href="/malls" w="144px" h="40px" bc="#FF427F" c="white" />
         </ExploreSectionStyle>
     );
