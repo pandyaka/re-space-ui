@@ -12,7 +12,7 @@ interface AllSpaceProps {
 const AllSpace: FunctionComponent<AllSpaceProps> = (props: AllSpaceProps) => {
     const { spaces } = props;
     const [isModalOpen, setModalOpen] = useState(false);
-    const [modalSpace, setModalSpace] = useState({});
+    const [modalSpace, setModalSpace] = useState(null);
 
     const handleModal = (id) => {
         setModalSpace(spaces.find((el) => el.id === id));
@@ -31,7 +31,7 @@ const AllSpace: FunctionComponent<AllSpaceProps> = (props: AllSpaceProps) => {
                     <SpaceCard onClick={handleModal} key={idx} space={space} />
                 ))}
             </CardGallery>
-            <SpaceModal isOpen={isModalOpen} toggleModal={toggleModal} space={modalSpace} />
+            <SpaceModal isOpen={isModalOpen} toggleModal={toggleModal} modalSpace={modalSpace} />
         </AllSpaceStyle>
     );
 };

@@ -6,6 +6,7 @@ import PageLayout from '@components/PageLayout';
 import TopSearch from '@components/TopSearch';
 import MallMapLayout from '@components/MallMapLayout';
 import MallType from '@interfaces/mall';
+import Space from '@interfaces/space';
 
 interface MallProps {
     mall: MallType;
@@ -28,10 +29,16 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     const { res, params } = ctx;
     const id = params.id;
     const url = `${process.env.API_URL}/malls/${id}`;
+    const spacesUrl = `${process.env.API_URL}/spaces?mallId=${id}`;
 
     try {
         const res = await fetch(url);
         const data = (await res.json()) as MallType;
+
+        const resSpaces = await fetch(spacesUrl);
+        const spacesData = (await resSpaces.json()) as Space[];
+
+        data.spaces = spacesData;
 
         return {
             props: {

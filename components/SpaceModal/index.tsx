@@ -8,7 +8,6 @@ import {
     SpaceInfoGrid,
     PriceTag,
     RentDialog,
-    RentButton,
     SpaceInfo,
     SpaceInfoTitle,
     SpaceInfoSectionTitle,
@@ -22,6 +21,7 @@ import Dropdown from '@components/Dropdown';
 import SpaceTypeIcon from '@components/SpaceTypeIcon';
 import Space from '@interfaces/space';
 import { idrFormatter } from 'utils';
+import { Button } from '@components/Button';
 
 interface SpaceModal {
     isOpen: boolean;
@@ -30,24 +30,26 @@ interface SpaceModal {
 }
 
 const SpaceModal: SFC<SpaceModal> = (props: SpaceModal) => {
-    const { NEXT_PUBLIC_API_URL } = process.env;
     const { isOpen, modalSpace, toggleModal } = props;
-    const { id, image_url, mall, name, price, shape, size, allowed_tenant_type } = modalSpace;
+
+    if (!modalSpace) return null;
+    console.log(modalSpace);
+    const { image_url, name, price, allowed_tenant_type } = modalSpace;
 
     return (
         <ModalStyle isOpen={isOpen} onBackgroundClick={toggleModal} onEscapeKeydown={toggleModal}>
             <VerticalScrollContainer height="40%">
                 <PictureGrid>
-                    <Cover img={`${NEXT_PUBLIC_API_URL}${image_url[0]}`} w="500px" h="100%" />
+                    <Cover img={`${image_url[0]}`} w="500px" h="100%" />
                     {image_url.map((el, idx) => (
-                        <Image key={idx} img={`${NEXT_PUBLIC_API_URL}${el}`} w="250px" h="100%" />
+                        <Image key={idx} img={`${el}`} w="250px" h="100%" />
                     ))}
                 </PictureGrid>
             </VerticalScrollContainer>
             <SpaceInfoGrid>
                 <SpaceInfo>
                     <SpaceInfoTitle>{name}</SpaceInfoTitle>
-                    <span>{mall.name}</span>
+                    <span>Plasa Indonesia</span>
                     <SpaceInfoSectionTitle>Overview</SpaceInfoSectionTitle>
                     <p>
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, exercitationem. Distinctio
@@ -82,9 +84,7 @@ const SpaceModal: SFC<SpaceModal> = (props: SpaceModal) => {
                             list={INTERVALS}
                             handleChange={(key, value) => console.log(value)}
                         />
-                        <RentButton w="232px" h="auto" c="white" bc="pink">
-                            Rent
-                        </RentButton>
+                        <Button w="232px" h="auto" c="white" bc="pink" ph="Rent" href="/dashboard" />
                     </RentDialog>
                 </RentGridItem>
             </SpaceInfoGrid>

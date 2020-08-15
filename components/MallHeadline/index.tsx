@@ -11,11 +11,10 @@ interface MallHeadlineProps {
 
 const MallHeadline: SFC<MallHeadlineProps> = (props: MallHeadlineProps) => {
     const { image_url, location, name } = props;
-    const { NEXT_PUBLIC_API_URL } = process.env;
 
     return (
         <MallHeadlineStyle>
-            <Image w="100%" h="auto" img={`${NEXT_PUBLIC_API_URL}${image_url}`} />
+            <Image w="100%" h="auto" img={`${image_url}`} />
             <MallName>{name}</MallName>
             <span>{location}</span>
         </MallHeadlineStyle>

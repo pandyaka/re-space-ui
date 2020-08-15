@@ -3,21 +3,11 @@ import React, { FunctionComponent, useState } from 'react';
 import { ActiveTenantsStyle, ActiveTenantsHeader, ActiveTenantsTitle, ActiveTenantsOption } from './style';
 import ActiveTenantCard from '@components/ActiveTenantCard';
 import VerticalScrollContainer from '@components/VerticalScrollContainer';
-
-const CATEGORIES = [
-    'food & beverage',
-    'fashion',
-    'kids & entertainment',
-    'small retail',
-    'beauty',
-    'gadget & electronic',
-    'health',
-    'fitness',
-    'home & living'
-];
+import SPACE_TYPE from 'common/space-type';
 
 const ActiveTenants: FunctionComponent = () => {
-    const [category, setCategory] = useState(CATEGORIES[0]);
+    const [category, setCategory] = useState(SPACE_TYPE[0]);
+    const [activeTenants, setActiveTenants] = useState([]);
 
     const handleCategoryClick = (cat) => {
         setCategory(cat);
@@ -27,7 +17,7 @@ const ActiveTenants: FunctionComponent = () => {
         <ActiveTenantsStyle>
             <ActiveTenantsHeader>
                 <ActiveTenantsTitle>Active Tenants</ActiveTenantsTitle>
-                {CATEGORIES.map((el, idx) => (
+                {SPACE_TYPE.map((el, idx) => (
                     <ActiveTenantsOption key={idx} selected={el === category} onClick={() => handleCategoryClick(el)}>
                         {el}
                     </ActiveTenantsOption>

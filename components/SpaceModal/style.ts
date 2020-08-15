@@ -77,14 +77,19 @@ export const RentDialog = styled.div`
     align-items: center;
     border-radius: ${(props) => props.theme.borderRadius};
     border: 1px solid lightgray;
+
+    ${ButtonStyle} {
+        padding: 12px 0;
+        margin: 12px 0;
+    }
 `;
 
 export const PriceTag = styled(H2Style)`
     margin-bottom: 0;
 `;
 
-export const RentButton = styled(ButtonStyle)`
-    cursor: pointer;
-    padding: 12px 0;
-    margin: 12px 0;
-`;
+// export const RentButton = styled(ButtonStyle)`
+//     cursor: pointer;
+//     padding: 12px 0;
+//     margin: 12px 0;
+// `;
