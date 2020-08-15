@@ -6,6 +6,7 @@ interface ImageProps {
     img: string;
     ws?: string;
     hs?: string;
+    largeOnly?: boolean;
 }
 
 export const Image = styled.div<ImageProps>`
@@ -14,4 +15,7 @@ export const Image = styled.div<ImageProps>`
     background-image: url(${(props) => props.img});
     background-size: cover;
     background-position: center;
+    @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        display: ${(props) => (props.largeOnly ? 'none' : 'unset')};
+    }
 `;

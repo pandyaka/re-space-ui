@@ -21,3 +21,17 @@ export const ButtonStyle = styled.a<ButtonProps>`
     align-items: center;
     font-family: ${(props) => props.theme.font.caption};
 `;
+
+export const CenterButtonStyle = styled.a<ButtonProps>`
+    display: flex;
+    background-color: ${(props) => props.bc};
+    width: ${(props) => props.w};
+    height: ${(props) => props.h};
+    color: ${(props) => props.c};
+    text-decoration: none;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    font-family: ${(props) => props.theme.font.caption};
+    margin: 0 auto;
+`;

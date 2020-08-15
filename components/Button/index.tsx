@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { ButtonStyle } from './style';
+import { ButtonStyle, CenterButtonStyle } from './style';
 import LinkWrapper from '@components/LinkWrapper';
 
 interface ButtonProps {
@@ -19,6 +19,16 @@ export const Button: FunctionComponent<ButtonProps> = (props: ButtonProps) => {
             <ButtonStyle w={props.w} h={props.h} bc={props.bc} c={props.c} href={props.href}>
                 {props.ph}
             </ButtonStyle>
+        </LinkWrapper>
+    );
+};
+
+export const CenterButton: FunctionComponent<ButtonProps> = (props: ButtonProps) => {
+    return (
+        <LinkWrapper link={props.href}>
+            <CenterButtonStyle w={props.w} h={props.h} bc={props.bc} c={props.c} href={props.href}>
+                {props.ph}
+            </CenterButtonStyle>
         </LinkWrapper>
     );
 };

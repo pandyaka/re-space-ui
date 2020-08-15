@@ -9,3 +9,14 @@ export const ExploreSectionStyle = styled.div`
 export const SectionCaption = styled(H2Style)`
     text-align: center;
 `;
+
+export const CardGallery = styled.div`
+    margin: 48px auto;
+    display: grid;
+    gap: 8px;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+    @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+`;
