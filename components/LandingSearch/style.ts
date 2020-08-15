@@ -12,12 +12,18 @@ export const WelcomeCaption = styled(Title)`
     display: block;
     margin: 0;
     width: 720px;
+    @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        width: 90vw;
+    }
 `;
 
 export const WelcomeSubCaption = styled(Subtitle)`
     display: block;
     width: 720px;
     margin-bottom: 32px;
+    @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        width: 90vw;
+    }
 `;
 
 export const SearchBottom = styled.div`
@@ -25,4 +31,7 @@ export const SearchBottom = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        width: 90vw;
+    }
 `;

@@ -4,6 +4,9 @@ export const SearchBarWrapper = styled.div`
     position: relative;
     display: flex;
     width: 600px;
+    @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        width: 90vw;
+    }
 `;
 
 export const SearchIcon = styled.div`

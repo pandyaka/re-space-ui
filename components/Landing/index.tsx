@@ -7,7 +7,7 @@ const Landing: FunctionComponent = () => {
     return (
         <LandingStyle>
             <LandingSearch></LandingSearch>
-            <Image img="/images/landing.jpeg" w="300px" h="624px" />
+            <Image largeOnly img="/images/landing.jpeg" w="300px" h="624px" />
         </LandingStyle>
     );
 };

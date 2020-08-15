@@ -15,6 +15,9 @@ export const MallCardStyle = styled.div`
     -webkit-box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.5);
+    @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        width: 90vw;
+    }
 `;
 
 export const Top = styled.div`
