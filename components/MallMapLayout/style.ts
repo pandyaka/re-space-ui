@@ -6,19 +6,17 @@ export const MallMapLayoutStyle = styled(Section)``;
 export const MallMapGrid = styled.div`
     display: grid;
     grid-template-columns: 2fr 3fr;
-    grid-template-rows: 3fr 2fr;
+    grid-template-rows: 3fr 2fr auto;
     gap: 16px;
-    height: 600px;
 
     @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
-        height: unset;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
 `;
 
 export const MapCell = styled.div`
-    grid-row: span 2;
+    grid-row: span 3;
     background-color: ${(props) => props.theme.map.colors.bg};
 
     @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {

@@ -6,6 +6,14 @@ interface InteractiveMapStyleProps {
 }
 
 export const InteractiveMapStyle = styled.div<InteractiveMapStyleProps>`
+    position: sticky;
+    top: 0;
+
+    @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        position: static;
+        top: unset;
+    }
+
     svg {
         width: ${(props) => props.w || '100%'};
         height: ${(props) => props.h || 'auto'};

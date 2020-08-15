@@ -5,6 +5,7 @@ import Container from '@components/Container';
 import ActiveTenants from '@components/ActiveTenants';
 import InteractiveMap from '@components/InteractiveMap';
 import MallHeadline from '@components/MallHeadline';
+import AllSpace from '@components/AllSpace';
 
 const MallMapLayout: SFC = () => {
     return (
@@ -19,6 +20,7 @@ const MallMapLayout: SFC = () => {
                     </MapCell>
                     <MallHeadline />
                     <ActiveTenants />
+                    <AllSpace />
                 </MallMapGrid>
             </Container>
         </MallMapLayoutStyle>
