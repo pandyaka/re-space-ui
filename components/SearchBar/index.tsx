@@ -1,22 +1,41 @@
 import React, { FunctionComponent } from 'react';
 import { SearchBarWrapper, SearchField, SearchIcon } from './style';
+import LinkWrapper from '@components/LinkWrapper';
 import { Image } from '@components/Image';
 
-export const SearchBarWithIcon: FunctionComponent = () => {
+interface InputProps {
+    formKey: string;
+    href?: string;
+    textHandler;
+}
+
+export const SearchBarWithIcon: FunctionComponent<InputProps> = ({ formKey, href, textHandler }: InputProps) => {
     return (
         <SearchBarWrapper>
-            <SearchIcon>
-                <Image style={{ color: 'red' }} img="/icons/search.svg" w="24px" h="24px" />
-            </SearchIcon>
-            <SearchField placeholder="Find Space" />
+            <LinkWrapper link={href}>
+                <SearchIcon>
+                    <Image img="/icons/search.svg" w="24px" h="24px" />
+                </SearchIcon>
+            </LinkWrapper>
+            <SearchField
+                placeholder="Find Space"
+                onChange={(event) => {
+                    textHandler(formKey, event.target.value);
+                }}
+            />
         </SearchBarWrapper>
     );
 };
 
-export const SearchBar: FunctionComponent = () => {
+export const SearchBar: FunctionComponent<InputProps> = ({ formKey, textHandler }: InputProps) => {
     return (
         <SearchBarWrapper>
-            <SearchField placeholder="Find Space" />
+            <SearchField
+                onChange={(event) => {
+                    textHandler(formKey, event.target.value);
+                }}
+                placeholder="Find Space"
+            />
         </SearchBarWrapper>
     );
 };

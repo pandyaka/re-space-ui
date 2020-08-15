@@ -1,12 +1,20 @@
 import React, { FunctionComponent } from 'react';
 import { DropdownStyle } from './style';
 
-const Dropdown: FunctionComponent = () => {
+interface DropdownInputProps {
+    formKey: string;
+    list: any[];
+    handleChange;
+}
+
+const Dropdown: FunctionComponent<DropdownInputProps> = ({ formKey, handleChange, list }: DropdownInputProps) => {
     return (
-        <DropdownStyle>
-            <option>option 1</option>
-            <option>option 2</option>
-            <option>option 3</option>
+        <DropdownStyle onChange={(event) => handleChange(formKey, event.target.value)}>
+            {list.map((item, idx) => (
+                <option key={idx} value={item}>
+                    {item}
+                </option>
+            ))}
         </DropdownStyle>
     );
 };
