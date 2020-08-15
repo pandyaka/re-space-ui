@@ -87,9 +87,3 @@ export const RentDialog = styled.div`
 export const PriceTag = styled(H2Style)`
     margin-bottom: 0;
 `;
-
-// export const RentButton = styled(ButtonStyle)`
-//     cursor: pointer;
-//     padding: 12px 0;
-//     margin: 12px 0;
-// `;
