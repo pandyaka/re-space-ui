@@ -5,32 +5,45 @@ import { ModalProvider } from 'styled-react-modal';
 import PageLayout from '@components/PageLayout';
 import TopSearch from '@components/TopSearch';
 import MallMapLayout from '@components/MallMapLayout';
+import MallType from '@interfaces/mall';
 
 interface MallProps {
-    id: string;
+    mall: MallType;
 }
 
 const Mall: SFC<MallProps> = (props: MallProps) => {
-    const { id } = props;
+    const { mall } = props;
 
     return (
         <ModalProvider>
             <PageLayout>
                 <TopSearch />
-                <MallMapLayout />
+                <MallMapLayout mall={mall} />
             </PageLayout>
         </ModalProvider>
     );
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-    const id = ctx.params.id;
+    const { res, params } = ctx;
+    const id = params.id;
+    const url = `${process.env.API_URL}/malls/${id}`;
 
-    return {
-        props: {
-            id
-        }
-    };
+    try {
+        const res = await fetch(url);
+        const data = (await res.json()) as MallType;
+
+        return {
+            props: {
+                mall: data
+            }
+        };
+    } catch (e) {
+        res.setHeader('location', '/');
+        res.statusCode = 302;
+        res.end();
+        return { props: {} };
+    }
 };
 
 export default Mall;

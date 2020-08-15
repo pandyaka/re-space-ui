@@ -9,6 +9,13 @@ export const ModalStyle = Modal.styled`
     width: min(800px, 90vw);
     background-color: white;
     overflow-y: scroll;
+    position: fixed;
+    right: 50px;
+
+    @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        position: unset;
+        right: unset;
+    }
 `;
 
 export const PictureGrid = styled.div`
@@ -77,6 +84,7 @@ export const PriceTag = styled(H2Style)`
 `;
 
 export const RentButton = styled(ButtonStyle)`
+    cursor: pointer;
     padding: 12px 0;
     margin: 12px 0;
 `;

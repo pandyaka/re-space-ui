@@ -1,7 +1,6 @@
 import React, { SFC } from 'react';
 
 import INTERVALS from 'common/intervals';
-import SPACE_TYPE from 'common/space-type';
 import {
     ModalStyle,
     PictureGrid,
@@ -21,29 +20,34 @@ import VerticalScrollContainer from '@components/VerticalScrollContainer';
 import { Image } from '@components/Image';
 import Dropdown from '@components/Dropdown';
 import SpaceTypeIcon from '@components/SpaceTypeIcon';
+import Space from '@interfaces/space';
+import { idrFormatter } from 'utils';
 
 interface SpaceModal {
     isOpen: boolean;
+    modalSpace: Space;
     toggleModal: () => void;
 }
 
 const SpaceModal: SFC<SpaceModal> = (props: SpaceModal) => {
-    const { isOpen, toggleModal } = props;
+    const { NEXT_PUBLIC_API_URL } = process.env;
+    const { isOpen, modalSpace, toggleModal } = props;
+    const { id, image_url, mall, name, price, shape, size, allowed_tenant_type } = modalSpace;
 
     return (
         <ModalStyle isOpen={isOpen} onBackgroundClick={toggleModal} onEscapeKeydown={toggleModal}>
             <VerticalScrollContainer height="40%">
                 <PictureGrid>
-                    <Cover img="/images/space-placeholder.jpg" w="500px" h="100%" />
-                    {[...Array(10).keys()].map((el, idx) => (
-                        <Image key={idx} img="/images/space-placeholder.jpg" w="250px" h="100%" />
+                    <Cover img={`${NEXT_PUBLIC_API_URL}${image_url[0]}`} w="500px" h="100%" />
+                    {image_url.map((el, idx) => (
+                        <Image key={idx} img={`${NEXT_PUBLIC_API_URL}${el}`} w="250px" h="100%" />
                     ))}
                 </PictureGrid>
             </VerticalScrollContainer>
             <SpaceInfoGrid>
                 <SpaceInfo>
-                    <SpaceInfoTitle>Spot at Area 51</SpaceInfoTitle>
-                    <span>Mall Kasablanka</span>
+                    <SpaceInfoTitle>{name}</SpaceInfoTitle>
+                    <span>{mall.name}</span>
                     <SpaceInfoSectionTitle>Overview</SpaceInfoSectionTitle>
                     <p>
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, exercitationem. Distinctio
@@ -62,9 +66,9 @@ const SpaceModal: SFC<SpaceModal> = (props: SpaceModal) => {
                     </ul>
                     <SpaceInfoSectionTitle>Allowed Tenant Type</SpaceInfoSectionTitle>
                     <AllowedTenantGrid>
-                        {SPACE_TYPE.map((el, idx) => (
+                        {allowed_tenant_type.map((el, idx) => (
                             <div key={idx}>
-                                <SpaceTypeIcon type={el} size="40px" />
+                                <SpaceTypeIcon type={el} size="35px" />
                                 <AllowedTenantText>{el}</AllowedTenantText>
                             </div>
                         ))}
@@ -72,7 +76,7 @@ const SpaceModal: SFC<SpaceModal> = (props: SpaceModal) => {
                 </SpaceInfo>
                 <RentGridItem>
                     <RentDialog>
-                        <PriceTag color="pink">Rp 45jt/Month</PriceTag>
+                        <PriceTag color="pink">{idrFormatter(price)}</PriceTag>
                         <Dropdown
                             formKey="interval"
                             list={INTERVALS}
