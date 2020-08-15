@@ -1,5 +1,6 @@
 import React, { SFC } from 'react';
 import { GetServerSideProps } from 'next';
+import { ModalProvider } from 'styled-react-modal';
 
 import PageLayout from '@components/PageLayout';
 import TopSearch from '@components/TopSearch';
@@ -13,10 +14,12 @@ const Mall: SFC<MallProps> = (props: MallProps) => {
     const { id } = props;
 
     return (
-        <PageLayout>
-            <TopSearch />
-            <MallMapLayout />
-        </PageLayout>
+        <ModalProvider>
+            <PageLayout>
+                <TopSearch />
+                <MallMapLayout />
+            </PageLayout>
+        </ModalProvider>
     );
 };
 

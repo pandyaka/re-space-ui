@@ -4,8 +4,8 @@ import { DropdownStyle } from './style';
 interface DropdownInputProps {
     formKey: string;
     list: any[];
-    handleChange;
     defaultValue?: string | string[];
+    handleChange: (key: string, value: any) => void;
 }
 
 const Dropdown: FunctionComponent<DropdownInputProps> = ({

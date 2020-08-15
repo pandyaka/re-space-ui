@@ -11,10 +11,10 @@ interface ButtonProps {
 
 export const ButtonStyle = styled.a<ButtonProps>`
     display: flex;
-    background-color: ${(props) => props.bc};
+    background-color: ${(props) => props.theme.colors[props.bc] || props.bc};
     width: ${(props) => props.w};
     height: ${(props) => props.h};
-    color: ${(props) => props.c};
+    color: ${(props) => props.theme.colors[props.c] || props.c};
     text-decoration: none;
     font-size: 18px;
     justify-content: center;
