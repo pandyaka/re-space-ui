@@ -15,6 +15,15 @@ export const WelcomeCaption = styled.div`
     width: 720px;
 `;
 
+export const WelcomeSubCaption = styled.div`
+    font-family: ${(props) => props.theme.font.caption};
+    color: ${(props) => props.theme.colors.blue};
+    font-weight: 400;
+    font-size: 24px;
+    width: 720px;
+    margin-bottom: 32px;
+`;
+
 export const SearchBottom = styled.div`
     width: 600px;
     display: flex;
