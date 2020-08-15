@@ -5,7 +5,7 @@ import SpaceCard from '@components/SpaceCard';
 import SpaceModal from '@components/SpaceModal';
 
 const AllSpace: FunctionComponent = () => {
-    const [isModalOpen, setModalOpen] = useState(true);
+    const [isModalOpen, setModalOpen] = useState(false);
 
     const handleModal = () => {
         setModalOpen((s) => !s);
