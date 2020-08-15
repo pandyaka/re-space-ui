@@ -10,6 +10,11 @@ export const MallHeadlineStyle = styled.div`
     ${Image} {
         flex-grow: 1;
     }
+
+    @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+        grid-row: 1;
+        height: 300px;
+    }
 `;
 
 export const MallName = styled(H2Style)`

@@ -13,8 +13,6 @@ interface MallProps {
 const Mall: SFC<MallProps> = (props: MallProps) => {
     const { id } = props;
 
-    console.log(id);
-
     return (
         <PageLayout>
             <TopSearch />
