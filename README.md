@@ -1,6 +1,6 @@
 # re-space-ui
 
-![](./public/images/logo.png =250x)
+![Logo](/public/images/logo.png)
 
 ### Run in Local
 1. Clone this repo
